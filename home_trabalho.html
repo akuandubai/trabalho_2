@@ -1,0 +1,290 @@
+<html>
+
+	<!-- Dentro da tag head estão armazenados links que conectam o código a arquivos externos, como bibliotecas, frameworks e configurações não visíveis para o usuário -->
+	<head>
+
+		<!-- A tag meta charset corrige possíveis erros ortográficos que podem aparecer no código ao ser aberto em um navegador -->
+		<meta charset="utf-8">
+
+		<!-- Os links abaixo conectam o código ao google fonts -->
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Parisienne&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lato:ital,wght@1,300&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+
+		<!-- Os links a seguir conectam o código ao Bootstrap -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+	</head>
+
+	<!-- A tag style abre a seção de configurações do CSS -->
+	<style>
+
+		/* Configurações de posicionamento e tamanho do bloco roda_pé (último bloco do programa) */
+		.ultimo_bloco {
+			/* A posição desse bloco recebe o valor absoluto para que possa ser movido em relação ao elemento pai (bloco_do_meio) */
+			position: absolute;
+
+			/* Não existe espaço algum após o último bloco (bottom) */
+			bottom: 0;
+
+			/* Define um espaço de 100% entre o último bloco e a margem superior do bloco_do_meio */
+			top: 100%;
+			/* Coloca a largura desse programa igual a largura da tela */
+			width: 100%;
+		}
+
+		/* O bloco geral compreende todos os blocos dentro do body, exceto a nav-bar */
+		.bloco_do_meio {
+			/* A altura mínima do programa é 100%. Isso faz com que o bloco do meio ocupe toda a página */
+			min-height:100%;
+
+			/* O bloco do meio recebe posição relativa para que possa ser usado como referência quando elementos filhos com posição absoluta forem movidos */
+			position: relative;
+
+			/* A largura do bloco geral foi definida como 100% para que ela seja sempre igual à largura da tela em que o programa for aberto */
+			width:100%;
+		}
+
+		/* O comando a seguir altera a cor do plano de fundo de tudo que está dentro da tag body */
+		body {
+			background-color: #FFFF99;
+		}
+
+		/* O comando a seguir altera a cor do plano de fundo da navbar */
+		.cor_nav {
+			background-color: #EEEB88;
+		}
+
+		/* O comando abaixo centraliza horizontalmente as imagens que estão dispostas em um carrossel */
+		.carrossel_centro {
+			display: flex;
+			justify-content: center;
+		}
+
+		/*Frase de efeito; alterei a fonte (font-family) e a posição do texto (text-align) */
+		.slogan {
+			text-align: center;
+			font-family: 'Architects Daughter', cursive;
+		}
+
+		/* O comando abaixo faz com que as três imagens circulares sejam tranformadas em um bloco composto por vários bloquinhos, sendo que a distância entre dois bloquinhos é sempre a mesma e todos eles estão dispostos em uma fila horizontal */
+		.rounded-circle {
+			display: flex;
+			justify-content: space-around;
+			flex-direction: row;
+		}
+
+		/* Centralizei o título principal */
+		.nome_da_floricultura {
+			text-align: center;
+		}
+
+		/* Alterei o tamanho da fonte, mudei a fonte do texto e mudei a cor do texto */
+		.titulo_floricultura {
+			font-family: 'Dancing Script', cursive;
+			color: #000000;
+			font-size: 1em;
+		}
+		
+		/* Alterei o tamanho da fonte, mudei a fonte do texto e mudei a cor do texto */
+		.titulo_folha_de_verao {
+			font-family: 'Abril Fatface', cursive;
+			color: #B0A900;
+			font-size: 1.5em;
+		}
+
+		/* O comando abaixo faz com que as três frases sejam tranformadas em um bloco composto por vários bloquinhos, sendo que a distância entre dois bloquinhos é sempre a mesma e todos eles estão dispostos em uma fila horizontal */
+		.texto_rounded-circle {
+			display: flex;
+			justify-content: space-around;
+			flex-direction: row;
+			/* Alterei o tamanho da fonte */
+			font-size: 0.95em;
+			/* Alterei o tipo de fonte do texto */
+			font-family: 'Architects Daughter', cursive;
+		}
+
+		/* O comando abaixo centraliza o dropdown */
+		.dropdown {
+			display: flex;
+			justify-content: center;
+		}
+
+		/* O comando abaixo altera a cor do botão "Catálogo" (dropdown) */
+		.btn {
+			background-color: #CCC633;
+		}
+
+		/* O comando abaixo altera a cor dos botões "Rosas" e "Tulipas" que estão dentro do dropdown */
+		.dropdown-menu {
+			background-color: #EEEB88;
+		}
+
+		/* Configurações do rodapé da página */
+		.itens_rodape {
+			/* Centralizei os textos do rodapé */
+			text-align: center;
+			/* Colori o plano de fundo do rodapé */
+			background-color: #EEEB88; 
+			/* Defini uma altura para o bloco que constitui o rodapé */
+			height: 200px;
+		}
+
+	</style>
+
+	<body>
+
+		<!-- Início da navbar -->
+		<div class="cor_nav">
+			<nav class="navbar navbar-expand-sm navbar-light" class="cor_nav">
+
+  				<!-- Logotipo da floricultura na navbar -->
+  				<a class="navbar-brand" href="#">
+					<img src="trabalho_livre_imagens/logotipo.png" alt="logo" style="width:40px; height:auto">
+  				</a>
+  
+  				<!-- Links -->
+  				<ul class="navbar-nav">
+  					<!-- Link da "página inicial" na navbar -->
+    				<li class="nav-item">
+      					<a class="nav-link" href="file:///C:/Users/akuan/OneDrive/%C3%81rea%20de%20Trabalho/Programa%C3%A7%C3%A3o/Mobile%20baseado%20em%20Javascript/Meet/Desafios/Nova%20pasta/home_trabalho.html">Página Inicial</a>
+    				</li>
+    				<!-- Link da página "sobre" na navbar -->
+    				<li class="nav-item">
+      					<a class="nav-link" href="file:///C:/Users/akuan/OneDrive/%C3%81rea%20de%20Trabalho/Programa%C3%A7%C3%A3o/Mobile%20baseado%20em%20Javascript/Meet/Desafios/Nova%20pasta/Sobre.html">Sobre</a>
+    				</li>
+  				</ul>
+
+			</nav>
+		</div>
+		<!-- Fim da navbar -->
+
+		<div class="bloco_do_meio">
+
+			<br><br>
+
+			<!-- Título principal; está logo abaixo da navbar -->
+			<div class="nome_da_floricultura">
+				<h2><div class="titulo_floricultura"> Floricultura</div> <div class="titulo_folha_de_verao"> Folha de Verão </div></h2>
+			</div>
+
+			<br>
+		
+			<!-- Frase de efeito (slogan) que está embaixo do título principal --> 
+			<div class="slogan">
+				<p>As flores mais belas da estação. O menor preço do mercado. A melhor floricultura do país.</p>
+			</div>
+
+			<br><br>
+
+			<!-- Três imagens em formato circular que estão alinhadas horizontalmente embaixo do slogan da floricultura -->
+			<div class="rounded-circle">
+  				<img src="trabalho_livre_imagens/home_imagem_1.png" class="rounded-circle" alt="fachada_da_loja" width="250" height="auto">
+  				<img src="trabalho_livre_imagens/home_imagem_2.png" class="rounded-circle" alt="fregueses" width="250" height="auto">
+  				<img src="trabalho_livre_imagens/home_imagem_3.png" class="rounded-circle" alt="vendedora" width="250" height="auto">
+			</div>
+
+			<br> 
+
+			<!-- Três frases de efeito que estão alinhadas horizontalmente embaixo das imagens circulares do rounded-circle -->
+			<div class="texto_rounded-circle">
+				<span class="texto_rounded-circle">In at porttitor neque, et blandit elit.</span>
+				<span class="texto_rounded-circle">Mauris quam risus, dapibus id sollicitudin</span>
+				<span class="texto_rounded-circle">Mollis posuere ante. Etiam et sem.</span>
+			</div>
+
+			<br><br><br><br>
+
+			<!-- Orações de efeito acima do carrossel de imagens -->
+			<div class="slogan">
+				<p>Invista no melhor arranjo de flores. Compre na Floricultura Folha de Verão</p>
+			</div>
+
+			<br>
+
+			<!-- Início do carrossel de imagens -->
+			<div class="carrossel_centro">
+				<div id="demo" class="carousel slide" data-ride="carousel">
+
+  					<!-- Indicadores --> 
+  					<ul class="carousel-indicators">
+    					<li data-target="#demo" data-slide-to="0" class="active"></li>
+    					<li data-target="#demo" data-slide-to="1"></li>
+    					<li data-target="#demo" data-slide-to="2"></li>
+  					</ul>
+  
+  					<!-- Imagens -->
+  					<div class="carousel-inner">
+    					<div class="carousel-item active">
+      						<img src="trabalho_livre_imagens/carrossel_1.png" alt="Los Angeles" width="800" height="auto">
+    					</div>
+    					<div class="carousel-item">
+      						<img src="trabalho_livre_imagens/carrossel_2.png" alt="Chicago" width="800" height="auto">
+    		    		</div>
+    					<div class="carousel-item">
+      						<img src="trabalho_livre_imagens/carrossel_3.png" alt="New York" width="800" height="auto">
+    					</div>
+  					</div>
+  
+  					<!-- Controles direito e esquerdo -->
+  					<a class="carousel-control-prev" href="#demo" data-slide="prev">
+    					<span class="carousel-control-prev-icon"></span>
+  					</a>
+  					<a class="carousel-control-next" href="#demo" data-slide="next">
+    					<span class="carousel-control-next-icon"></span>
+  					</a>
+
+				</div>
+			</div>
+			<!-- Fim do carrossel de imagens -->
+
+			<br><br><br>
+
+			<!-- Início do dropdown que serve como botão de catálogo de flores -->
+			<div class="dropdown">
+
+  				<div class="btn-group">
+  					<!-- Botão "Catálogo" -->
+    				<button type="button" class="btn">Catálogo</button>
+    				<button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">
+    				</button>
+    				<!-- Botões "Rosas" e "Tulipas" -->
+    				<div class="dropdown-menu">
+      					<a class="dropdown-item" href="file:///C:/Users/akuan/OneDrive/%C3%81rea%20de%20Trabalho/Programa%C3%A7%C3%A3o/Mobile%20baseado%20em%20Javascript/Meet/Desafios/Nova%20pasta/catalogo_rosas_trabalho.html">Rosas</a>
+      					<a class="dropdown-item" href="file:///C:/Users/akuan/OneDrive/%C3%81rea%20de%20Trabalho/Programa%C3%A7%C3%A3o/Mobile%20baseado%20em%20Javascript/Meet/Desafios/Nova%20pasta/catalogo_tulipas_trabalho.html">Tulipas</a>
+    				</div>
+  				</div>
+
+  			</div>
+  			<!-- Fim do dropdwon -->
+  		
+  			<br><br><br>
+
+  			<!-- Início do rodapé da página inicial -->
+  			<div class="ultimo_bloco">
+  				<div class="itens_rodape">
+  					<br>
+  					<!-- Link "Voltar para o topo do página inicial" -->
+  					<a href="file:///C:/Users/akuan/OneDrive/%C3%81rea%20de%20Trabalho/Programa%C3%A7%C3%A3o/Mobile%20baseado%20em%20Javascript/Meet/Desafios/Nova%20pasta/home_trabalho.html" style="color: #B0A900">Voltar para o topo da página</a>
+  					<br>
+  					<!-- Link "Sobre" -->
+  					<a href="file:///C:/Users/akuan/OneDrive/%C3%81rea%20de%20Trabalho/Programa%C3%A7%C3%A3o/Mobile%20baseado%20em%20Javascript/Meet/Desafios/Nova%20pasta/Sobre.html" style="color: #B0A900">Sobre</a>
+  					<br><br>
+  					<!-- Declaração de contatos da floricultura -->
+  					<h6>Contatos:</h6> 
+  					(99) 99999-9999
+  					<br>
+  					floriculturafolhadeverao@gmail.com
+  				</div>
+  			</div>
+  			<!-- Fim do rodapé da página inicial -->
+
+  		</div>
+  	
+	</body>
+		
+</html>

@@ -1,0 +1,243 @@
+<html>
+
+	<head>
+
+		<!-- A tag meta charset é utilizada para corrigir possíveis erros ortográficos que aparecerem no texto do código -->
+		<meta charset="utf-8">
+
+		<!-- Os links abaixo conectam o código ao Bootstrap -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  		<!-- Os links abaixo conectam o código ao google fonts -->
+  		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
+
+	</head>
+
+	<style>
+
+		/* por meio do seletor universal, anulei as dimensões de padding e margin */
+		* {
+			padding: 0;
+			margin: 0;
+		}
+
+		/* defini que body e height terão uma altura de 100%; isso faz com que eles ocupem todo o espaço da página */
+		html, body {height:100%;}
+
+		/* O bloco geral compreende todos os blocos dentro do body */
+		.bloco_geral {
+			/* A altura mínima do programa é 100%. Isso faz com que o bloco do meio ocupe toda a página */
+			min-height: 100%;
+
+			/* O bloco do meio recebe posição relativa para que possa ser usado como referência quando elementos filhos com posição absoluta forem movidos */
+			position: relative;
+
+			/* A largura do bloco geral foi definida como 100% para que ela seja sempre igual à largura da tela em que o programa for aberto */
+			width: 100%;
+		}
+
+		/* O comando a seguir altera a cor do plano de fundo de tudo que está dentro da tag body */
+		body {
+			background-color: #FFFF99;
+		}
+
+		/* Essa classe está relacionada à imagem de flores no início da página */
+		.logotipo {
+			/* centralizei o logotipo e estabeleci uma distância de 60px entre a margem superior do elemento pai e o logotipo */
+			display: flex;
+			justify-content: center;
+			margin-top: 60px; 
+		}
+
+		/* Centralizei o título principal */
+		.nome_da_floricultura {
+			text-align: center;
+		}
+
+		/* Alterei o tamanho da fonte, mudei a fonte do texto e mudei a cor do texto */
+		.titulo_floricultura {
+			font-family: 'Dancing Script', cursive;
+			color: #000000;
+			font-size: 0.75em;
+		}
+		
+		/* Alterei o tamanho da fonte, mudei a fonte do texto e mudei a cor do texto */
+		.titulo_folha_de_verao{
+			font-family: 'Abril Fatface', cursive;
+			color: #B0A900;
+			font-size: 1.2em;
+		}
+
+		/* Essa classe se refere ao texto que informa sobre o pagamento apenas via boleto */
+		.texto_boleto {
+			/* alterei a fonte */
+			font-family: 'Amiri', serif;
+			/* mudei o tamanho da fonte */
+			font-size: 0.97em;
+		}
+
+		/* Essa classe se refere ao formulário de compra */
+		.formulario {
+			/* alterei suas dimensões */
+			width: 55%;
+			height: 700px;
+		}
+
+		/* Essa classe se refere ao texto que fica sobre cada input */
+		.texto_formulario {
+			/* troquei a fonte do texto */
+			font-family: 'Amiri', serif;
+			/* alterei o tamanho do texto */
+			font-size: 1.1em;
+		}
+
+		/* Essa classe está relacionada ao botão comprar */
+		.btn {
+			/* alterei a cor do plano de fundo dele */
+			background-color: #CCC633;
+		}
+
+		/* Configurações do rodapé da página */
+		.itens_rodape{
+			/* Centralizei os itens do rodapé */
+			text-align: center;
+			/* Colori o plano de fundo do rodapé */
+			background-color: #EEEB88; 
+			/* Defini uma altura para o bloco que constitui o rodapé */
+			height: 200px;
+		}
+
+		/* Configurações do bloco roda_pé (último bloco do programa) */
+		.ultimo_bloco {
+			/* A posição desse bloco recebe o valor absoluto para que possa ser movido em relação ao elemento pai (bloco_do_meio) */
+			position: absolute;
+
+			/* Não existe espaço algum após o último bloco (bottom) */
+			bottom: 0;
+
+			/* Defini um espaço de 100% entre o último bloco e a margem superior do elemento_pai */
+			top: 110%;
+			/* estabeleci uma largura de 100% para que ele tenha a mesma largura que a página */
+			width: 100%;
+		}
+
+	</style>
+
+	<body>
+
+		<div class="bloco_geral">
+
+			<!-- Imagem de flores no início da página -->
+			<div class="logotipo">          
+  				<img src="trabalho_livre_imagens/logotipo.png" class="rounded" alt="logotipo" width="135px" height="auto"> 
+			</div><br>
+
+			<!-- Título da floricultura -->
+			<div class="nome_da_floricultura">
+				<h2><div class="titulo_floricultura"> Floricultura</div> <div class="titulo_folha_de_verao"> Folha de Verão </div></h2>
+			</div><br><br>
+
+			<center>
+
+			<!-- Início do formulário -->
+			<div class="formulario">
+				<p class="texto_boleto"> Todas as compras realizadas em nosso site devem ser pagas via boleto bancário. </p><br>
+  				<form action="/action_page.php" class="needs-validation" novalidate>
+
+    				<div class="form-group">
+      					<label for="nome" class="texto_formulario">Nome completo:</label>
+      					<input type="text" class="form-control" id="nome" placeholder="Insira seu nome completo" name="nome" required>
+      					<div class="valid-feedback"></div>
+      					<div class="invalid-feedback">Por favor, preencha este campo.</div>
+    				</div>
+
+    				<div class="form-group">
+      					<label for="email" class="texto_formulario">Email:</label>
+      					<input type="email" class="form-control" id="email" placeholder="Informe seu email" name="email" required>
+      					<div class="valid-feedback"></div>
+      					<div class="invalid-feedback">Por favor, preencha este campo.</div>
+    				</div>
+
+    				<div class="form-group">
+      					<label for="cpf" class="texto_formulario">CPF/CNPJ:</label>
+      					<input type="number" class="form-control" id="cpf" placeholder="Informe seu CPF/CNPJ" name="cpf" required>
+      					<div class="valid-feedback"></div>
+      					<div class="invalid-feedback">Por favor, preencha este campo.</div>
+    				</div>
+
+    				<div class="form-group">
+      					<label for="endereço" class="texto_formulario">Endereço:</label>
+      					<input type="text" class="form-control" id="endereço" placeholder="Informe seu endereço" name="endereço" required>
+      					<div class="valid-feedback"></div>
+      					<div class="invalid-feedback">Por favor, preencha este campo.</div>
+    				</div>
+
+    				<div class="form-group">
+      					<label for="cidade" class="texto_formulario">Cidade:</label>
+      					<input type="text" class="form-control" id="cidade" placeholder="Informe sua cidade" name="cidade" required>
+      					<div class="valid-feedback"></div>
+      					<div class="invalid-feedback">Por favor, preencha este campo.</div>
+    				</div>
+
+    				<div class="form-group">
+      					<label for="CEP" class="texto_formulario">CEP:</label>
+      					<input type="number" class="form-control" id="cep" placeholder="Informe seu CEP" name="cep" required>
+      					<div class="valid-feedback"></div>
+      					<div class="invalid-feedback">Por favor, preencha este campo.</div>
+    				</div>
+
+    				<div class="form-group">
+      					<label for="telefone" class="texto_formulario">Número de telefone com o DDD:</label>
+      					<input type="tel" class="form-control" id="telefone" placeholder="Informe seu número de telefone com o DDD" name="telefone" required>
+      					<div class="valid-feedback"></div>
+      					<div class="invalid-feedback">Por favor, preencha este campo.</div>
+    				</div><br>
+
+    				<div class="form-group form-check">
+      					<label class="form-check-label">
+        					<input class="form-check-input" type="checkbox" name="confirmar" required>Eu confirmo que os dados acima estão corretos.
+        					<div class="valid-feedback"></div>
+        					<div class="invalid-feedback">Por favor, confirme se os dados que você forneceu estão corretos.</div>
+      					</label>
+    				</div><br>
+
+    				<button type="submit" class="btn"><a href="file:///C:/Users/akuan/OneDrive/%C3%81rea%20de%20Trabalho/Programa%C3%A7%C3%A3o/Mobile%20baseado%20em%20Javascript/Meet/Desafios/Nova%20pasta/pagina_final.html" style="color: #000000">Comprar</a></button>
+  				</form>
+			</div>
+			<!-- Fim do formulário -->
+
+			</center>
+
+
+			<br><br><br>
+
+			<!-- Início do rodapé -->
+			<div class="ultimo_bloco">
+  				<div class="itens_rodape">
+  					<br>
+  					<!-- Link "Voltar para o topo do página inicial" -->
+  					<a href="file:///C:/Users/akuan/OneDrive/%C3%81rea%20de%20Trabalho/Programa%C3%A7%C3%A3o/Mobile%20baseado%20em%20Javascript/Meet/Desafios/Nova%20pasta/pagina_de_compra.html" style="color: #B0A900">Voltar para o topo da página</a>
+  					<br>
+  					<!-- Link "Sobre" -->
+  					<a href="file:///C:/Users/akuan/OneDrive/%C3%81rea%20de%20Trabalho/Programa%C3%A7%C3%A3o/Mobile%20baseado%20em%20Javascript/Meet/Desafios/Nova%20pasta/Sobre.html" style="color: #B0A900">Sobre</a>
+  					<br><br>
+  					<!-- Declaração de contatos da floricultura -->
+  					<h6>Contatos:</h6> 
+  					(99) 99999-9999
+  					<br>
+  					floriculturafolhadeverao@gmail.com
+  				</div>
+  			</div>
+  			<!-- Fim do rodapé -->
+
+  		</div>
+
+	</body>
+
+</html>

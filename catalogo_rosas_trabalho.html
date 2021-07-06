@@ -1,0 +1,324 @@
+<html>
+
+	<head>
+
+		<!-- A tag meta charset corrige possíveis erros ortográficos que podem surgir no texto do programa ao ser aberto no navegador -->
+		<meta charset="utf-8">
+
+		<!-- Links do google fonts -->
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+
+		<!-- Links que conectam o código ao Bootstrap -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+	</head>
+
+	<style>
+
+		/* O comando abaixo altera a cor do plano de fundo de todos os elementos que estão dentro do body */
+		body {
+			background-color: #FFFF99;
+		}
+
+		/* O comando abaixo altera a cor do plano de fundo da navbar */
+		.cor_nav {
+			background-color: #EEEB88;
+		}
+
+		/* A classe abaixo se refere aos titulos "Mudas de Rosas" e "Buquês de Rosas" */
+		.mudas_buques {
+			/* muda a posição dos títulos, centralizando-os */
+			text-align: center;
+			/* muda a fonte dos títulos */
+			font-family: 'Satisfy', cursive;
+			/* muda a cor dos títulos */
+			color: #000000; 
+		}
+
+		/* A classe abaixo se refere a todas as fileiras de imagens, preços, descrições de produtos e botões; cada fileira foi convertida em um bloco e cada elemento da fileira foi tratado como um bloquinho */
+		.colunas {
+			/* converte cada fileira em um bloco formado por bloquinhos */
+			display: flex;
+			/* dispõe os bloquinhos de modo que há sempre o mesmo espaço entre eles */
+			justify-content: space-around;
+			/* mantém a fileira na horizontal */
+			flex-direction: row;
+		}
+
+		/* A classe abaixo se refere ao bloco que está entre os títulos "Mudas de Rosas" e "Buquês de Rosas" */
+		.mudas_rosas {
+			/* mantém uma distância de 50 px entre a primeira linha de bloquinhos e a borda superior do bloco */ 
+			padding-top: 50px;
+			/* mantém uma distância de 20px entre a coluna de bloquinhos da esquerda e a borda esquerda do bloco */
+			padding-left: 20px;
+			/* mantém uma distância de 20px entre a coluna de bloquinhos da direita e a borda direita do bloco */
+			padding-right: 20px;
+			/* mantém uma distância de 50px entre a margem inferior do bloco e a margem superior do bloco abaixo */
+			margin-bottom: 50px;
+			/* mantém uma distância de 20px entre a margem esquerda do bloco e a margem esquerda do elemento pai */
+			margin-left: 20px;
+			/* mantém uma distância de 100px entre a margem direita do bloco e a margem direita do elemento pai */
+			margin-right: 100px;
+			/* muda a cor do plano de fundo do bloco */
+			background-color: #EEEB88;
+			/* define a altura do bloco */
+			height: 800px; 
+			/* define uma largura de 97% do bloco em relação a largura da página */
+    		width: 97%; 
+		}
+
+		/* As configurações do bloco buque_rosas são quase idênticas às configurações do bloco mudas_rosas, a única diferença está na altura dos dois blocos */
+		.buque_rosas{
+			padding-top: 50px;
+			padding-left: 20px;
+			padding-right: 20px;
+			margin-bottom: 10px;
+			margin-left: 20px;
+			margin-right: 100px;
+			background-color: #EEEB88;
+			height: 400px;
+			width: 97%;
+		}
+
+		/* A classe abaixo está relacionada ao botão "comprar". Ela foi criada para alterar a cor do plano de fundo dele */
+		.btn {
+			background-color: #B0A900;
+		}
+
+		/* Essa classe se refere ao rodapé da página */
+		.ultimo_bloco {
+			/* A posição foi definida como absoluta para que o bloco possa ser movido em relação ao elemento_pai, sem seguir o fluxo convencional da página */
+			position: absolute;
+			/* O último_bloco deve ficar a 0px de distância da margem do elemento pai, ou seja, não deve haver espaço abaixo do ultimo_bloco */
+			bottom: 0;
+			/* A distância da margem superior do elemento pai e o ultimo_bloco deve ser de 100% */
+			top: 100%;
+			/* A largura do ultimo_bloco deve ser de 100% em relação ao tamanho da largura da página */
+			width: 100%;
+		}
+
+		/* Essa classe abrange todos os itens que estão na parte interna do rodapé da página, como links e informações de contato */
+		.items {
+			/* Centralizei os itens */
+			text-align: center;
+			/* Alterei a cor do plano de fundo */
+			background-color: #EEEB88; 
+			/* Defini uma altura de 245px */
+			height: 245px;
+		}
+
+		/* Essa classe compreende toda a página exceto a navbar */
+		.elemento_pai {
+			/* As duas propriedades abaixo definem as dimensões do bloco */
+			min-height: 100%;
+			width: 100%;
+			/* Defini sua posição como relativa para poder mover elementos filhos com posição absoluta usando o elemento_pai como referência */
+			position: relative;
+		}
+
+		/* Essa classe refere-se ao "Desenvolvido por Estefane de Lima" que está no rodapé da página */
+		.assinatura {
+			/* Centralizei a assinatura */
+			text-align: center;
+			/* Alterei o tamanho da fonte */
+			font-size: 0.85em;
+		}
+
+	</style>
+
+	<body>
+
+		<!-- Início da navbar -->
+		<div class="cor_nav">
+			<nav class="navbar navbar-expand-sm navbar-light" class="cor_nav">
+
+  				<!-- Logotipo da floricultura na navbar -->
+  				<a class="navbar-brand" href="#">
+					<img src="trabalho_livre_imagens/logotipo.png" alt="logo" style="width:40px; height:auto">
+  				</a>
+  
+  				<!-- Links -->
+  				<ul class="navbar-nav">
+  					<!-- Link da "Página Inicial" -->
+    				<li class="nav-item">
+      					<a class="nav-link" href="file:///C:/Users/akuan/OneDrive/%C3%81rea%20de%20Trabalho/Programa%C3%A7%C3%A3o/Mobile%20baseado%20em%20Javascript/Meet/Desafios/Nova%20pasta/home_trabalho.html">Página Inicial</a>
+    				</li>
+    				<!-- Link da página "Sobre" -->
+    				<li class="nav-item">
+      					<a class="nav-link" href="file:///C:/Users/akuan/OneDrive/%C3%81rea%20de%20Trabalho/Programa%C3%A7%C3%A3o/Mobile%20baseado%20em%20Javascript/Meet/Desafios/Nova%20pasta/Sobre.html">Sobre</a>
+    				</li>
+  				</ul>
+
+			</nav>
+		</div>
+		<!-- Fim da navbar -->
+
+		<div class="elemento_pai">
+
+			<br><br><br>
+
+			<!-- Título "Mudas de Rosas" -->
+			<div class="mudas_buques">
+				<h2>Mudas de Rosas</h2>
+			</div>
+
+			<br>
+
+			<!-- Início do bloco de mudas de rosas -->
+			<div class="mudas_rosas">
+
+				<!-- Primeira fileira de imagens -->
+				<div class="colunas">          
+  					<img src="trabalho_livre_imagens/rosa_vermelha.png" class="rounded" alt="Cinque Terre" width="300" height="auto">  
+  					<img src="trabalho_livre_imagens/rosa_branca.png" class="rounded" alt="Cinque Terre" width="300" height="auto">  
+  					<img src="trabalho_livre_imagens/rosas_amarelas.png" class="rounded" alt="Cinque Terre" width="300" height="auto">  
+				</div>
+
+				<!-- Primeira fileira de preços -->
+				<div class="colunas">
+					<h4>R$49,90</h4>
+					<h4>R$30,80</h4>
+					<h4>R$45,50</h4>
+				</div>
+
+				<!-- Primeira fileira de descrições de produtos -->
+				<div class="colunas">
+					<span>Rosas Vermelhas (6 unidades)</span>
+					<span>Rosas Brancas (6 unidades)</span>
+					<span>Rosas Amarelas (6 unidades)</span>
+				</div>
+
+				<br>
+
+				<!-- Primeira fileira de botões -->
+				<div class="colunas">
+  					<a href="file:///C:/Users/akuan/OneDrive/%C3%81rea%20de%20Trabalho/Programa%C3%A7%C3%A3o/Mobile%20baseado%20em%20Javascript/Meet/Desafios/Nova%20pasta/pagina_de_compra.html" class="btn" role="button">Comprar</a>
+  					<a href="file:///C:/Users/akuan/OneDrive/%C3%81rea%20de%20Trabalho/Programa%C3%A7%C3%A3o/Mobile%20baseado%20em%20Javascript/Meet/Desafios/Nova%20pasta/pagina_de_compra.html" class="btn" role="button">Comprar</a>
+  					<a href="file:///C:/Users/akuan/OneDrive/%C3%81rea%20de%20Trabalho/Programa%C3%A7%C3%A3o/Mobile%20baseado%20em%20Javascript/Meet/Desafios/Nova%20pasta/pagina_de_compra.html" class="btn" role="button">Comprar</a>
+				</div>
+
+				<br><br><br>
+
+				<!-- Segunda fileira de imagens -->
+				<div class="colunas">
+					<img src="trabalho_livre_imagens/rosa_rosa.png" class="rounded" alt="Rosa cor-de-rosa" width="300" height="auto"> 
+  					<img src="trabalho_livre_imagens/rosas_laranjas.png" class="rounded" alt="Rosa laranja" width="300" height="auto">
+  					<img src="trabalho_livre_imagens/rosa_lilas.png" class="rounded" alt="Rosa lilás" width="300" height="auto">    
+				</div>
+
+				<!-- Segunda fileira de preços -->
+				<div class="colunas">
+					<h3>R$42,75</h3>
+					<h3>R$20,50</h3>
+					<h3>R$35,90</h3>
+				</div>
+
+				<!-- Segunda fileira de descrições de produtos -->
+				<div class="colunas">
+					<span>Rosas Cores-de-rosa (6 unidades)</span>
+					<span>Rosas Laranjas (6 unidades)</span>
+					<span>Rosas Lilases (6 unidades)</span>
+				</div>
+
+				<br>
+
+				<!-- Segunda fileira de botões -->
+				<div class="colunas">
+  					<a href="file:///C:/Users/akuan/OneDrive/%C3%81rea%20de%20Trabalho/Programa%C3%A7%C3%A3o/Mobile%20baseado%20em%20Javascript/Meet/Desafios/Nova%20pasta/pagina_de_compra.html" class="btn" role="button">Comprar</a>
+  					<a href="file:///C:/Users/akuan/OneDrive/%C3%81rea%20de%20Trabalho/Programa%C3%A7%C3%A3o/Mobile%20baseado%20em%20Javascript/Meet/Desafios/Nova%20pasta/pagina_de_compra.html" class="btn" role="button">Comprar</a>
+  					<a href="file:///C:/Users/akuan/OneDrive/%C3%81rea%20de%20Trabalho/Programa%C3%A7%C3%A3o/Mobile%20baseado%20em%20Javascript/Meet/Desafios/Nova%20pasta/pagina_de_compra.html" class="btn" role="button">Comprar</a>
+				</div>
+
+			</div>
+			<!-- Fim do bloco de mudas de rosas -->
+
+			<br><br><br>
+
+			<div class="mudas_buques">
+				<h2>Buquês de Rosas</h2>
+			</div>
+
+			<br>
+
+			<!-- Início do bloco de buquês de rosas -->
+			<div class="buque_rosas">
+
+				<!-- Terceira fileira de imagens -->
+				<div class="colunas">
+					<img src="trabalho_livre_imagens/buque_1.png" class="rounded" alt="Cinque Terre" width="300" height="auto"> 
+  					<img src="trabalho_livre_imagens/buque_5.png" class="rounded" alt="Cinque Terre" width="300" height="auto">  
+  					<img src="trabalho_livre_imagens/buque_3.png" class="rounded" alt="Cinque Terre" width="300" height="auto">  
+				</div>
+
+				<!-- Terceira fileira de preços -->
+				<div class="colunas">
+					<h3>R$77,25</h3>
+					<h3>R$57,90</h3>
+					<h3>R$65,40</h3>
+				</div>
+
+				<!-- Terceira fileira de descrições de produtos-->
+				<div class="colunas">
+					<span> Buquê de Rosas Coloridas (tamanho grande)</span>
+					<span>Buquê de Rosas Coloridas (tamanho pequeno)</span>
+					<span>Buquê de Rosas Vermelhas (tamanho médio)</span>
+				</div>
+
+				<br>
+
+				<!-- Terceira fileira de botões -->
+				<div class="colunas">
+  					<a href="file:///C:/Users/akuan/OneDrive/%C3%81rea%20de%20Trabalho/Programa%C3%A7%C3%A3o/Mobile%20baseado%20em%20Javascript/Meet/Desafios/Nova%20pasta/pagina_de_compra.html" class="btn" role="button">Comprar</a>
+  					<a href="file:///C:/Users/akuan/OneDrive/%C3%81rea%20de%20Trabalho/Programa%C3%A7%C3%A3o/Mobile%20baseado%20em%20Javascript/Meet/Desafios/Nova%20pasta/pagina_de_compra.html" class="btn" role="button">Comprar</a>
+  					<a href="file:///C:/Users/akuan/OneDrive/%C3%81rea%20de%20Trabalho/Programa%C3%A7%C3%A3o/Mobile%20baseado%20em%20Javascript/Meet/Desafios/Nova%20pasta/pagina_de_compra.html" class="btn" role="button">Comprar</a>
+				</div>
+
+			</div>
+			<!-- Fim do bloco de buquês de rosas -->
+
+			<br><br><br><br>
+
+			<!-- Início do rodapé -->
+			<div class="ultimo_bloco">
+  				<div class="items">
+
+  					<br>
+
+  					<!-- Link "Voltar para o topo da página" -->
+  					<a href="file:///C:/Users/akuan/OneDrive/%C3%81rea%20de%20Trabalho/Programa%C3%A7%C3%A3o/Mobile%20baseado%20em%20Javascript/Meet/Desafios/Nova%20pasta/catalogo_rosas_trabalho.html" style="color: #B0A900">Voltar para o topo da página</a>
+
+  					<br>
+
+  					<!-- Link "Sobre" -->
+  					<a href="file:///C:/Users/akuan/OneDrive/%C3%81rea%20de%20Trabalho/Programa%C3%A7%C3%A3o/Mobile%20baseado%20em%20Javascript/Meet/Desafios/Nova%20pasta/Sobre.html" style="color: #B0A900">Sobre</a>
+
+  					<br><br>
+
+  					<!-- Informações de contato -->
+  					<h6>Contatos:</h6> 
+  					(99) 99999-9999
+
+  					<br>
+
+  					floriculturafolhadeverao@gmail.com
+
+  					<br><br><br>
+
+  					<div class="assinatura">
+  						Desenvolvido por Estefane de Lima
+  						<br>
+  					</div>
+  				</div>
+  			
+  			</div>
+  			<!-- Fim do rodapé -->
+
+  		</div>
+
+	</body>
+
+</html>

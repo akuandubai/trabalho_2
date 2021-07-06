@@ -1,0 +1,326 @@
+<html>
+
+  <head>
+
+    <!-- A tag meta charset corrige possíveis erros ortográficos que podem aparecer no texto do código ao ser aberto no browser -->
+    <meta charset="utf-8">
+
+    <!-- Links do google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+
+    <!-- Link que conecta o código ao Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  </head>
+
+  <style>
+
+    /* O comando abaixo altera a cor do plano de fundo de todos os elementos que estão dentro do body */
+    body {
+      background-color: #FFFF99;
+    }
+
+    /* O comando abaixo altera a cor do plano de fundo da navbar */
+    .cor_nav {
+      background-color: #EEEB88;
+    }
+
+    /* A classe abaixo se refere ao titulo "Mudas de Rosas" que está logo abaixo da navbar */
+    .tulipas {
+      /* muda a posição do elemento, centralizando-o */
+      text-align: center;
+      /* muda a fonte do texto */
+      font-family: 'Satisfy', cursive;
+      /* muda a cor do elemento */
+      color: #000000; 
+    }
+
+    /* A classe abaixo se refere a todas as fileiras de imagens, preços, descrições de produtos e botões; cada fileira foi convertida em um bloco e cada elemento da fileira foi tratado como um bloquinho */
+    .colunas {
+      /* converte cada fileira em um bloco formado por bloquinhos */
+      display: flex;
+      /* dispõe os bloquinhos de modo que há sempre o mesmo espaço entre eles */
+      justify-content: space-around;
+      /* mantém a fileira na horizontal */
+      flex-direction: row;
+    }
+
+    /* A classe abaixo se refere ao bloco que contém todos os produtos da categoria "Mudas de Rosas" */
+    .mudas_tulipas {
+      /* mantém uma distância de 50 px entre a primeira linha de bloquinhos e a borda superior do bloco */ 
+      padding-top: 50px;
+      /* mantém uma distância de 20px entre a coluna de bloquinhos da esquerda e a borda esquerda do bloco */
+      padding-left: 20px;
+      /* mantém uma distância de 20px entre a coluna de bloquinhos da direita e a borda direita do bloco */
+      padding-right: 20px;
+      /* mantém uma distância de 0px entre a margem superior do bloco e a margem inferior do bloco acima */
+      margin-top: 0px;
+      /* mantém uma distância de 50px entre a margem inferior do bloco e a margem superior do bloco abaixo */
+      margin-bottom: 50px;
+      /* mantém uma distância de 20px entre a margem esquerda do bloco e a margem esquerda do elemento pai */
+      margin-left: 20px;
+      /* mantém uma distância de 100px entre a margem direita do bloco e a margem direita do elemento pai */
+      margin-right: 100px;
+      /* muda a cor do plano de fundo do bloco */
+      background-color: #EEEB88;
+      /* define a altura do bloco */
+      height: 1710px; 
+      /* define uma largura de 97% da largura da página */
+      width: 97%; 
+    }
+
+    /* A classe abaixo está relacionada ao botão "comprar". Ela foi criada para alterar a cor do plano de fundo dele */
+    .btn {
+      background-color: #B0A900;
+    }
+
+    /* Essa classe se refere ao rodapé da página */
+    .ultimo_bloco {
+      /* A posição foi definida como absoluta para que o bloco possa ser movido em relação ao elemento pai (bloco_do_meio), sem seguir o fluxo convencional da página */
+      position: absolute;
+      /* O último_bloco deve ficar a 0px de distância da margem do elemento pai, ou seja, não deve haver espaço abaixo do ultimo_bloco */
+      bottom: 0;
+      /* A distância da margem superior do elemento pai e a margem superior do ultimo_bloco deve ser de 100% */
+      top: 100%;
+      /* A largura do ultimo_bloco deve ser de 100% da largura da página */
+      width: 100%;
+    }
+
+    /* Essa classe se refere ao itens que estão dentro do rodapé, como informações de contato e links */
+    .items {
+      /* centralizei os itens */
+      text-align: center;
+      /* alterei a cor do plano de fundo */
+      background-color: #EEEB88; 
+      /* defini uma altura de 245px */
+      height: 245px;
+    }
+
+    /* contém todos os elementos, menos a navbar */
+    .bloco_do_meio {
+      /* defini uma altura mínima de 100%, de modo que o bloco_do_meio está ocupando todo os espaço da página */
+      min-height: 100%;
+      /* defini uma posição relativa para que um elemento filho desse bloco que tenha posição absoluta possa ser movido em relação ao bloco_do_meio */
+      position: relative;
+      /* defini uma largura de 100% para que o bloco do meio tenha uma largura igual à largura da página */
+      width: 100%;
+    }
+
+    /* essa classe se refere ao "Desenvolvido por Estefane de Lima" que está no rodapé da página */
+    .assinatura {
+      /* centralizei a assinatura */
+      text-align: center;
+      /* alterei o tamanho da fonte da assinatura */
+      font-size: 0.85em;
+    }
+
+  </style>
+
+  <body>
+
+    <!-- Início da navbar -->
+    <div class="cor_nav">
+      <nav class="navbar navbar-expand-sm navbar-light" class="cor_nav">
+
+          <!-- Logotipo da floricultura na navbar -->
+          <a class="navbar-brand" href="#">
+          <img src="trabalho_livre_imagens/logotipo.png" alt="logo" style="width:40px; height:auto">
+          </a>
+  
+          <!-- Links -->
+          <ul class="navbar-nav">
+            <!-- Link da "Página Inicial" -->
+            <li class="nav-item">
+                <a class="nav-link" href="file:///C:/Users/akuan/OneDrive/%C3%81rea%20de%20Trabalho/Programa%C3%A7%C3%A3o/Mobile%20baseado%20em%20Javascript/Meet/Desafios/Nova%20pasta/home_trabalho.html">Página Inicial</a>
+            </li>
+            <!-- Link da página "Sobre" -->
+            <li class="nav-item">
+                <a class="nav-link" href="file:///C:/Users/akuan/OneDrive/%C3%81rea%20de%20Trabalho/Programa%C3%A7%C3%A3o/Mobile%20baseado%20em%20Javascript/Meet/Desafios/Nova%20pasta/Sobre.html">Sobre</a>
+            </li>
+          </ul>
+
+      </nav>
+    </div>
+    <!-- Fim da navbar -->
+
+    <div class="bloco_do_meio">
+
+      <br><br><br>
+
+      <!-- Título "Mudas de Tulipas" -->
+      <div class="tulipas">
+        <h2>Mudas de Tulipas</h2>
+      </div>
+
+      <br>
+
+      <!-- Início do bloco de mudas de tulipas -->
+      <div class="mudas_tulipas">
+
+        <!-- Primeira fileira de imagens -->
+        <div class="colunas">          
+          <img src="trabalho_livre_imagens/tulipas_1.png" class="rounded" alt="tulipas amarelas" width="300" height="auto">  
+          <img src="trabalho_livre_imagens/tulipas_2.png" class="rounded" alt="tulipas sortidas" width="300" height="auto">  
+          <img src="trabalho_livre_imagens/tulipas_3.png" class="rounded" alt="tulipas laranjas" width="300" height="auto">  
+        </div>
+
+        <!-- Primeira fileira de preços -->
+        <div class="colunas">
+          <h4>R$36,70</h4>
+          <h4>R$30,80</h4>
+          <h4>R$41,25</h4>
+        </div>
+
+        <!-- Primeira fileira de descrições de produtos -->
+        <div class="colunas">
+          <span>Tulipas Amarelas (6 unidades)</span>
+          <span>Tulipas Sortidas (6 unidades)</span>
+          <span>Tulipas Laranjas (6 unidades)</span>
+        </div>
+
+        <br>
+
+        <!-- Primeira fileira de botões -->
+        <div class="colunas">
+          <a href="file:///C:/Users/akuan/OneDrive/%C3%81rea%20de%20Trabalho/Programa%C3%A7%C3%A3o/Mobile%20baseado%20em%20Javascript/Meet/Desafios/Nova%20pasta/pagina_de_compra.html" class="btn" role="button">Comprar</a>
+          <a href="file:///C:/Users/akuan/OneDrive/%C3%81rea%20de%20Trabalho/Programa%C3%A7%C3%A3o/Mobile%20baseado%20em%20Javascript/Meet/Desafios/Nova%20pasta/pagina_de_compra.html" class="btn" role="button">Comprar</a>
+          <a href="file:///C:/Users/akuan/OneDrive/%C3%81rea%20de%20Trabalho/Programa%C3%A7%C3%A3o/Mobile%20baseado%20em%20Javascript/Meet/Desafios/Nova%20pasta/pagina_de_compra.html" class="btn" role="button">Comprar</a>
+        </div>
+
+        <br><br><br>
+
+        <!-- Segunda fileira de imagens -->
+        <div class="colunas">
+          <img src="trabalho_livre_imagens/tulipas_4.png" class="rounded" alt="Tulipas de duas cores (roxo e branco)" width="300" height="auto"> 
+          <img src="trabalho_livre_imagens/tulipas_5.png" class="rounded" alt="Tulipas brancas" width="300" height="auto">
+          <img src="trabalho_livre_imagens/tulipas_6.png" class="rounded" alt="Tulipas rosa escuro" width="300" height="auto">    
+        </div>
+
+        <!-- Segunda fileira de preços -->
+        <div class="colunas">
+          <h3>R$23,75</h3>
+          <h3>R$37,80</h3>
+          <h3>R$35,50</h3>
+        </div>
+
+        <!-- Segunda fileira de descrições de produtos -->
+        <div class="colunas">
+          <span>Tulipas roxo e branco (6 unidades)</span>
+          <span>Tulipas Brancas (6 unidades)</span>
+          <span>Tulipas Cores-de-rosa (6 unidades)</span>
+        </div>
+
+        <br>
+
+        <!-- Segunda fileira de botões -->
+        <div class="colunas">
+          <a href="file:///C:/Users/akuan/OneDrive/%C3%81rea%20de%20Trabalho/Programa%C3%A7%C3%A3o/Mobile%20baseado%20em%20Javascript/Meet/Desafios/Nova%20pasta/pagina_de_compra.html" class="btn" role="button">Comprar</a>
+          <a href="file:///C:/Users/akuan/OneDrive/%C3%81rea%20de%20Trabalho/Programa%C3%A7%C3%A3o/Mobile%20baseado%20em%20Javascript/Meet/Desafios/Nova%20pasta/pagina_de_compra.html" class="btn" role="button">Comprar</a>
+          <a href="file:///C:/Users/akuan/OneDrive/%C3%81rea%20de%20Trabalho/Programa%C3%A7%C3%A3o/Mobile%20baseado%20em%20Javascript/Meet/Desafios/Nova%20pasta/pagina_de_compra.html" class="btn" role="button">Comprar</a>
+        </div>
+
+        <br><br><br>
+
+        <!-- Terceira fileira de imagens -->
+        <div class="colunas">
+          <img src="trabalho_livre_imagens/tulipas_7.png" class="rounded" alt="Tulipas de duas cores (vermelho e amarelo)" width="300" height="auto"> 
+          <img src="trabalho_livre_imagens/tulipas_8.png" class="rounded" alt="Tulipas cores-de-rosa" width="300" height="auto">
+          <img src="trabalho_livre_imagens/tulipas_9.png" class="rounded" alt="Tulipas de três cores (vermelho, amarelo e rosa)" width="300" height="auto">    
+        </div>
+
+        <!-- Terceira fileira de preços -->
+        <div class="colunas">
+          <h3>R$42,75</h3>
+          <h3>R$20,50</h3>
+          <h3>R$50,40</h3>
+        </div>
+
+        <!-- Terceira fileira de descrições de produtos -->
+        <div class="colunas">
+          <span>Tulipas vermelho e amarelo (6 unidades)</span>
+          <span>Tulipas rosa claro (6 unidades)</span>
+          <span>Tulipas vermelho, amarelo e rosa (6 unidades)</span>
+        </div>
+
+        <br>
+
+        <!-- Terceira fileira de botões -->
+        <div class="colunas">
+            <a href="file:///C:/Users/akuan/OneDrive/%C3%81rea%20de%20Trabalho/Programa%C3%A7%C3%A3o/Mobile%20baseado%20em%20Javascript/Meet/Desafios/Nova%20pasta/pagina_de_compra.html" class="btn" role="button">Comprar</a>
+            <a href="file:///C:/Users/akuan/OneDrive/%C3%81rea%20de%20Trabalho/Programa%C3%A7%C3%A3o/Mobile%20baseado%20em%20Javascript/Meet/Desafios/Nova%20pasta/pagina_de_compra.html" class="btn" role="button">Comprar</a>
+            <a href="file:///C:/Users/akuan/OneDrive/%C3%81rea%20de%20Trabalho/Programa%C3%A7%C3%A3o/Mobile%20baseado%20em%20Javascript/Meet/Desafios/Nova%20pasta/pagina_de_compra.html" class="btn" role="button">Comprar</a>
+        </div>
+
+        <br><br><br>
+
+        <!-- Quarta fileira de imagens -->
+        <div class="colunas">
+          <img src="trabalho_livre_imagens/tulipas_10.png" class="rounded" alt="Tulipas de duas cores (vermelho e branco)" width="300" height="auto"> 
+            <img src="trabalho_livre_imagens/tulipas_11.png" class="rounded" alt="Tulipa rosa-bebê" width="300" height="auto">
+            <img src="trabalho_livre_imagens/tulipas_12.png" class="rounded" alt="Tulipas vermelhas" width="300" height="auto">    
+        </div>
+
+        <!-- Quarta fileira de preços -->
+        <div class="colunas">
+          <h3>R$41,45</h3>
+          <h3>R$20,50</h3>
+          <h3>R$46,90</h3>
+        </div>
+
+        <!-- Quarta fileira de descrições de produtos -->
+        <div class="colunas">
+          <span>Tulipas vermelho e branco (6 unidades)</span>
+          <span>Tulipas rosa-bebê (6 unidades)</span>
+          <span>Tulipas Vermelhas (6 unidades)</span>
+        </div>
+
+        <br>
+
+        <!-- Quarta fileira de botões -->
+        <div class="colunas">
+            <a href="file:///C:/Users/akuan/OneDrive/%C3%81rea%20de%20Trabalho/Programa%C3%A7%C3%A3o/Mobile%20baseado%20em%20Javascript/Meet/Desafios/Nova%20pasta/pagina_de_compra.html" class="btn" role="button">Comprar</a>
+            <a href="file:///C:/Users/akuan/OneDrive/%C3%81rea%20de%20Trabalho/Programa%C3%A7%C3%A3o/Mobile%20baseado%20em%20Javascript/Meet/Desafios/Nova%20pasta/pagina_de_compra.html" class="btn" role="button">Comprar</a>
+            <a href="file:///C:/Users/akuan/OneDrive/%C3%81rea%20de%20Trabalho/Programa%C3%A7%C3%A3o/Mobile%20baseado%20em%20Javascript/Meet/Desafios/Nova%20pasta/pagina_de_compra.html" class="btn" role="button">Comprar</a>
+        </div>
+
+      </div>
+      <!-- Fim do bloco de mudas de tulipas -->
+
+      <br><br><br><br>
+
+      <!-- Início do rodapé -->
+      <div class="ultimo_bloco">
+
+        <div class="items"><br>
+
+          <!-- Links -->
+          <a href="file:///C:/Users/akuan/OneDrive/%C3%81rea%20de%20Trabalho/Programa%C3%A7%C3%A3o/Mobile%20baseado%20em%20Javascript/Meet/Desafios/Nova%20pasta/catalogo_tulipas_trabalho.html" style="color: #B0A900">Voltar para o topo da página</a><br>
+
+          <a href="file:///C:/Users/akuan/OneDrive/%C3%81rea%20de%20Trabalho/Programa%C3%A7%C3%A3o/Mobile%20baseado%20em%20Javascript/Meet/Desafios/Nova%20pasta/Sobre.html" style="color: #B0A900">Sobre</a><br><br>
+
+          <!-- Informações de contato -->
+          <h6>Contatos:</h6> 
+          (99) 99999-9999
+          <br>
+          floriculturafolhadeverao@gmail.com
+          <br><br><br>
+
+          <!-- Minha assinatura -->
+          <div class="assinatura">
+            Desenvolvido por Estefane de Lima<br>
+          </div>
+
+        </div>
+
+      </div>
+      <!-- Fim do rodapé -->
+
+      </div>
+
+  </body>
+
+</html>

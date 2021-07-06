@@ -1,0 +1,139 @@
+<html>
+
+	<head>
+		<!-- A tag meta charset corrige possíveis erros ortográficos que podem aparecer no texto do código ao ser aberto no navegador -->
+		<meta charset="utf-8">
+
+		<!-- Os links a seguir conectam o código ao Bootstrap -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  		<!-- Os links abaixo conectam o código ao google fonts -->
+  		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+	</head>
+
+	<style>
+
+		/* por meio do seletor universal, anulei as dimensões de padding e margin */
+		*  {
+			margin:0;
+			padding:0;
+		}
+
+		/* defini que body e height terão uma altura de 100%; isso faz com que eles ocupem todo o espaço da página */
+		html, body {height:100%;}
+
+		/* Essa classe abrange todo o conteúdo dó programa */
+		.geral {
+			min-height: 100%;
+			position: relative;
+			width: 100%;
+		}
+
+		/* O comando a seguir altera a cor do plano de fundo de tudo que está dentro da tag body */
+		body {
+			background-color: #FFFF99;
+		}
+
+		/* Essa classe se refere à imagem de flores que está no topo da página */
+		.logotipo {
+			display: flex;
+			justify-content: center;
+			margin-top: 60px; 
+		}
+
+		/* Centralizei o título principal */
+		.nome_da_floricultura {
+			text-align: center;
+		}
+
+		/* Alterei o tamanho da fonte, mudei a fonte do texto e mudei a cor do texto */
+		.titulo_floricultura {
+			font-family: 'Dancing Script', cursive;
+			color: #000000;
+			font-size: 0.65em;
+		}
+		
+		/* Alterei o tamanho da fonte, mudei a fonte do texto e mudei a cor do texto */
+		.titulo_folha_de_verao{
+			font-family: 'Abril Fatface', cursive;
+			color: #B0A900;
+			font-size: 1.1em;
+		}
+
+		/* Essa classe está associada ao primeiro alert */
+		.alert {
+			/* modifiquei a largura */
+			width: 50%;
+			/* defini uma distância de 35px entre o alert e a margem superior do bloco geral */
+			margin-top: 35px;
+			/* alterei a cor do plano de fundo */
+			background-color: #EEEB88; 
+		}
+
+		/*  Essa classe está associada ao segundo alert */
+		.alert_2 {
+			/* modifiquei a largura */
+			width: 50%;
+			/* mudei a cor do plano de fundo */
+			background-color: #EEEB88; 
+		}
+
+		.links {
+			text-align: center;
+		}
+
+
+
+	</style>
+
+	<body>
+
+		<div class="geral">
+
+			<!-- Imagem de flores que está no topo da página -->
+			<div class="logotipo">          
+  				<img src="trabalho_livre_imagens/logotipo.png" class="rounded" alt="logotipo" width="135px" height="auto"> 
+			</div><br>
+
+			<!-- Título principal -->
+			<div class="nome_da_floricultura">
+				<h2><div class="titulo_floricultura"> Floricultura</div> <div class="titulo_folha_de_verao"> Folha de Verão </div></h2>
+			</div><br>
+
+			<center>
+
+				<!-- Primeiro alert -->
+				<div class="alert">
+  					<div class=" alert-dismissible fade show">
+    					<button type="button" class="close" data-dismiss="alert">&times;</button>
+    					<strong>Compra finalizada! </strong>
+  					</div>
+  				</div>
+
+  				<!-- Segundo alert -->
+  				<div class="alert">
+  					<div class=" alert-dismissible fade show">
+    					<button type="button" class="close" data-dismiss="alert">&times;</button>
+    					<strong>Em breve você estará recebendo um e-mail com todos os dados da sua compra.</strong>
+  					</div>
+  				</div><br><br>
+
+  				<!-- Links -->
+  				<a href="file:///C:/Users/akuan/OneDrive/%C3%81rea%20de%20Trabalho/Programa%C3%A7%C3%A3o/Mobile%20baseado%20em%20Javascript/Meet/Desafios/Nova%20pasta/home_trabalho.html" style="color: #B0A900" class="links">Voltar para a página inicial</a><br>
+  				<a href="file:///C:/Users/akuan/OneDrive/%C3%81rea%20de%20Trabalho/Programa%C3%A7%C3%A3o/Mobile%20baseado%20em%20Javascript/Meet/Desafios/Nova%20pasta/catalogo_rosas_trabalho.html" style="color: #B0A900" class="links">Ir para o catálogo de rosas</a><br>
+  				<a href="file:///C:/Users/akuan/OneDrive/%C3%81rea%20de%20Trabalho/Programa%C3%A7%C3%A3o/Mobile%20baseado%20em%20Javascript/Meet/Desafios/Nova%20pasta/catalogo_tulipas_trabalho.html" style="color: #B0A900" class="links">Ir para o catálogo de tulipas</a>
+
+  			</center>
+
+  			<br><br>
+
+  		</div>
+
+	</body>
+
+</html>
